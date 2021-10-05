@@ -1,9 +1,8 @@
 1. 리터럴이란?
- 변하지 않는 데이터값
+ =>변하지 않는 데이터값
 
 2. 아래의 내용이 에러가 나는 이유와 수정 방법은?
 System.out.println(3147483647 + 3147483648);
-
 =>JVM은 32비트가 기본이어서 정수는 int로 인식함.
  int범위를 넘어가는 정수 및 연산을 사용할 때는 숫자 뒤에 L or l 을 붙인다.
 
@@ -20,21 +19,38 @@ int b = 4;
 double result = a / b;
 
 System.out.println(result);
-
 => 정수값을 나눈 결과값은 이미 소수점 아래를 버리고
  정수만 남은 결과값을 result에 대입하므로
  변수 a와 b를 선언할 때 실수자료형 double로 변경하거나
  double result = (double)a / b 명시적 형변환 한다.
 
 5. 이스케이프 시퀀스의 종류를 나열하고 기능을 설명하시오.
+=> \b - 백스페이스 문자
+   \t - 탭 문자
+   \\ - 백슬래시 문자
+   \' - 작은 따옴표 문자(단일 인용부호)
+   \" - 큰 따옴표(이중 인용부호)
+   \n - 개 행 문자(줄 바꿈)
+   \r - 캐리지리턴(carriage return) 문자(열복귀)
 
 6. 아래의 출력 결과를 확인하고, 130이 나오는 이유를 설명
 System.out.println('A'); 
 System.out.println('A' + 'A');
+=> 4byte 아래 자료형(byte,short,char)의 연산에서 cpu가 
+  32비트인 int로 자동 형변환 시키게 됨.
+  그래서 char -> int 형 변환 되서 영문 대문자 A의 아스키코드 값인 65+65 = 130 이 나옴
 
-7. 결합 방향과 우선순위에 대하여 설명하시오.
+7. 결합 방향과 우선순위에 대하여 설명하시오
+
+
 8. "1초과 100미만인가?"를 코딩으로 표현하면?
+=> int num = 0;
+   boolean result = (num > 1) && (num < 100);
+
 9. "2의 배수 또는 3의 배수?" 를 코딩으로 표현 하면?
+=> int num = 20;
+  int result = ((num % 2) == 0) || ((num % 3) == 0);
+
 10. 아래의 프린트 결과를 예측해 보고, 코딩 후 결과를 확인 하시오.
 class SCE {
 	public static void main(String[] args) {
@@ -43,16 +59,24 @@ class SCE {
 		boolean result;    
 
 		result = ((num1 += 10) < 0) && ((num2 += 10) > 0);
-    System.out.println("result = " + result);
-    System.out.println("num1 = " + num1);
-    System.out.println("num2 = " + num2 + '\\n'); // "
+    		System.out.println("result = " + result);
+    		System.out.println("num1 = " + num1);
+    		System.out.println("num2 = " + num2 + '\n');
 	
-    result = ((num1 += 10) > 0) || ((num2 += 10) > 0);
-    System.out.println("result = " + result);
-    System.out.println("num1 = " + num1);
-    System.out.println("num2 = " + num2);
+    		result = ((num1 += 10) > 0) || ((num2 += 10) > 0);
+    		System.out.println("result = " + result);
+    		System.out.println("num1 = " + num1);
+    		System.out.println("num2 = " + num2);
 	}
 }
+=> result = false
+   num1 = 10
+   num2 = 0
+
+   result = true
+   num1 = 20
+   num2 = 0
+   
 11.아래를 프로그래밍 하시오.
 국어 : 50
 영어 : 70
@@ -60,3 +84,12 @@ class SCE {
 
 총점과 평균을 구하시오.
 -단 평균은 소숫점 까지 나오도록 하시오
+=> int kor = 50;
+   int eng = 70;
+   int math = 95;
+		
+   int sum = kor + eng + math;	
+   System.out.println(sum);
+		
+   double avg = sum / 3.0;	
+   System.out.println(avg);
