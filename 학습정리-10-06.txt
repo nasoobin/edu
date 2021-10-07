@@ -1,0 +1,133 @@
+1.  아래가 에러가 나는 이유를 설명하고, 수정 하시오.
+short num = 1;
+short num = -num;
+=> -num=-1*num 과 같은 의미이고 연산 작업을 하고 있기 때문에, 
+  int자료형으로 형변환이 필요하다.
+ 수정버전=>short num = 1;
+	  short num = (int)-num;
+
+2. 전위 증가 연산자와 후위 증가 연산자의 차이는?
+=> 전위 증가 연산자 : 연산기호가 변수 앞에 있고 값을 대입하기전에 연산 먼저하고 연산값을 대입한다.
+		    변수를 +1 또는 -1 한 것과 같은 결과
+
+=> 후위 증가 연산자 : 연산기호가 변수 뒤에 있고 연산전에 대입먼저 하고 이후 연산작업을 함.
+
+3. 아래의 비트 연산자 4가지를 설명하시오.
+& | ^ ~
+=> & : 비트And. 좌우가 둘 다 1일 때만 1을 반환한다.
+     | : 비트 OR. 좌우 둘 중 하나만 1이면 1을 반환한다.
+    ^ : 비트 XOR. 둘이 같을 때 0을 반환, 다를 때 1을 반환한다.
+    ~ : 비트 Not. 비트를 반전시켜 반환한다. 0이면 1, 1이면 0.
+
+4. 아래의 쉬프트 연산자에 대하여 설명하시오.
+<< : Left Shift => 비트 연산자로 모든 비트가 왼쪽으로 요구하는 수만큼 이동시킨다.
+	ex) A << B - A를 왼쪽으로 B만큼 이동하라는 의미. A가 증가되는 특성을 보인다.
+>> : Right Shift => 비트 연산자로 모든 비트가 오른쪽으로 요구하는 수만큼 이동시킨다.
+	ex) A >> B - A를 오른쪽으로 B만큼 이동하라는 의미. A가 감소되는 특성을 보인다.
+
+5. 아래의 출력값을 예측하시오.
+class AssignSteResult {
+	public static void main(String[] args) {
+	int num1 = 10, num2 = 20, num3 = 30;
+	num1 = num2 = num3;    
+
+    /*
+      = 연산자는 결합 방향이 오른쪽에서 왼쪽으로 진행된다.  ->
+      따라서 위의 문장은 다음과 같다. 
+      num1 = (num2 = num3);        
+    */
+    
+    System.out.println(num1);	
+    System.out.println(num2);
+    System.out.println(num3);
+	}
+}
+=> 30
+
+6.아래의 출력값을 예측하시오.
+class AddNum {
+	public static void main(String[] args) {
+		int result = 3 + 6;
+		System.out.println("3 + 6 = " + result);  
+  
+		result += 9;
+    System.out.println("3 + 6 + 9 = " + result);
+    
+    result += 12;
+    System.out.println("3 + 6 + 9 + 12 = " + result);
+	}
+}
+=> 30
+
+7.  조건문의 3가지 종류를 나열하고 설명하시오.
+
+8. 아래의 프로그램을 짜시오.
+ 국어:80 수학:80 영어:60 총점과 평균을 출력하고, 
+ 평균에 따른 수우미양가를 출력 하시오.
+=>	int kor = 80;
+	int eng = 60;
+	int math = 80;
+	System.out.println("이번 국어시험 점수는 "+ kor +"점");
+	System.out.println("이번 영어시험 점수는 "+ eng +"점");
+	System.out.println("이번 수학시험 점수는 "+ math +"점");
+	System.out.println("");
+		
+	int sum = kor + eng + math;
+		
+	double avg = sum / 3.0;
+		
+	if(avg >= 90) {
+		System.out.println("당신의 성적은 수 입니다. 최고입니다.");
+	}
+	else if(avg >= 80) {
+		System.out.println("당신의 성적은 우 입니다. 수고하셨습니다.");
+	}
+	else if(avg >= 70) {
+		System.out.println("당신의 성적은 미 입니다. 아쉽습니다.");
+	}
+	else if(avg >= 60) {
+		System.out.println("당신의 성적은 양 입니다. 분발하세요");
+	}
+	else {
+		System.out.println("당신의 성적은 가 입니다. 더 열심히 하세요.");
+	}
+
+
+9. int 변수 3개 선언 
+임의 값 집어 넣음
+
+그중 3개의 값중 최대값을 출력 
+90 100 60
+
+출력:
+최대값은 100 입니다.
+=> 	int num1 = 50;
+	int num2 = 80;
+	int num3 = 40;
+	System.out.println("num1 = "+ num1);
+	System.out.println("num2 = "+ num2);
+	System.out.println("num3 = "+ num3 + '\n');
+		
+	if((num1 > num2) && (num1 > num3)) {
+		System.out.println("이중 최대값은 "+ num1 +"입니다.");
+	}
+	else if((num2 > num1) && (num2 > num3)) {
+		System.out.println("이중 최대값은 "+ num2 +"입니다.");
+	}
+	else {
+		System.out.println("이중 최대값은 "+ num3 +"입니다.");
+	}
+
+
+10. int 변수 선언 후 임의로 값을 넣음.
+해당 값이 짝수 이면 "짝수 입니다" 출력
+해당 값이 홀수 이면 "홀수 입니다" 출력
+=>	int num = 10;
+	System.out.println("num1 = "+ num);
+		
+	if(num % 2 == 0) {
+		System.out.println(num +" 은 짝수 입니다.");
+	}
+	else {
+		System.out.println(num +" 은 홀수 입니다.");
+	}
