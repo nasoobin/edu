@@ -1,0 +1,252 @@
+1. 함수는 어떻게 알아 볼수있는가?
+=> 소문자로 시작하며 뒤엔( )가 있다.
+
+2. 함수 호출 하는 법은?
+=> 메서드의 원형을 그대로 사용해서 호출한다.
+
+3. 함수 만드는 법은?
+=> 반드시 class안에 단독 함수로 생성.
+   함수안에 중첩으로 다른 함수를 정의할 수는 없다.
+
+4. 리턴 타입 void 는 어떠한 경우에 쓰는가?
+=> 반환할 타입이 없을 경우에 사용한다.
+
+5. 아래를 함수로 만드시오.
+
+starPrint2(5) 
+
+출력
+*****
+ ****
+  ***
+   **
+    *
+=> 	public static void main(String[] args) {
+
+		statPrint2(5);
+
+	}
+	
+	public static void statPrint2(int su) {
+		
+		for(int i = 1; i <= su; i++) {
+			for(int j = 1; j < i; j++) {
+				System.out.print(" ");
+			}
+			for(int j = i; j <= 5; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+
+5. 아래를 함수로 만드시오.
+
+starPrint3(5) 
+
+출력
+   
+    *   
+   ***
+  *****
+ *******
+*********
+=> 	public static void main(String[] args) {
+
+		statPrint2(5);
+
+	}
+	
+	public static void statPrint2(int su) {
+		
+		for(int i = 1; i <= su; i++) {
+			for(int j = i; j < 5; j++) {
+				System.out.print(" ");
+			}
+			for(int j = 1; j <= (2*i-1); j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+
+
+6.아래의 함수를 만드시오. 		
+
+char grade;
+double avg = 80;
+
+grade = getGrade(avg);
+
+// 우 입니다.
+System.out.println(grade + " 입니다.");
+=> 	public static void main(String[] args) {
+		
+		char grade;
+		double avg = 80;
+		
+		grade = getGrade(avg);
+		// 우 입니다.
+		System.out.println(grade +" 입니다.");
+
+	}
+	
+	public static char getGrade(double p) {
+		
+		char avg = '수';
+		
+		if(p >= 90) {
+			avg = '수';
+		}
+		else if(p >= 80) {
+			avg = '우';
+		}
+		else if(p >= 70) {
+			avg = '미';
+		}
+		else if(p >= 60) {
+			avg = '양';
+		}
+		else{
+			avg = '가';
+		}
+		return avg;
+	}
+
+
+7.아래의 함수를 만드시오. 
+
+int sum = getHap(1,100);
+//5050
+System.out.println(sum);
+=> 	public static void main(String[] args) {
+		
+		int sum = getHap(1, 100);
+		//5050
+		System.out.println(sum);
+
+	}
+	
+	public static int getHap(int start, int end) {
+		
+		int sum = 0;
+		for(int i = start; i <= end; i++) {
+			sum += i;
+		}
+		return sum;
+	}
+
+8.아래의 함수를 만드시오. 
+
+int count = get57(1,100);
+//count 는 1부터 100 까지의 숫자중 5의 배수 이자 7의 배수인 수의 갯수
+System.out.println(count );
+=> 	public static void main(String[] args) {
+		
+		int count = get57(1, 100);
+	//count 는 1부터 100까지의 숫자 중 5의 배수이자 7의 배수인 수의 갯수
+		System.out.println(count);
+		
+	}
+	
+	public static int get57(int start, int end) {
+		
+		int count = 0;
+		for(int i = start; i <= end; i++) {
+			if(((i % 5) == 0) && ((i % 7) == 0)) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+9.아래의 함수를 만드시오. 
+
+printGuGudan(3)// 3단 출력
+printGuGudan(4)// 4단 출력
+=> 	public static void main(String[] args) {
+		
+		printGuGudan(3); // 3단 출력
+		printGuGudan(4); // 4단 출력
+		
+	}
+	
+	public static void printGuGudan(int dan) {
+		
+		for(int i = dan; i <= 9; i++) {
+			for(int j = 1; j <= 9; j++) {
+				System.out.println(i +"x"+ j +"="+ (i&j));
+			}
+			break;
+		}
+		System.out.println("=============");
+	}
+
+10.아래의 함수를 만드시오. 
+
+getRecArea(3,5) //사각형 넓이
+getRecCirlce(5) //원넓이
+getTriangleArea(4 , 5) //삼각형 넓이
+=> 	public static void main(String[] args) {
+
+		getRecArea(3, 5);
+		getRecCircle(5);
+		getTriangleArea(4, 5);
+
+	}
+	
+	public static void getRecArea(int w, int h) {
+		
+		int sqr = w * h;
+		System.out.println(sqr);
+	}
+
+	public static void getRecCircle(double rad) {
+		
+		final double PI = 3.14;
+		double cc = rad * rad * PI;
+		System.out.println(cc);
+	}
+	
+	public static void getTriangleArea(int bl, int h) {
+		
+		double tA = bl * h * 0.5;
+		System.out.println(tA);
+	}
+	
+
+11. 함수로 만들면 좋은점은?
+-같은 작업을(중복) 하지 않기 위해
+-기능이 2번 이상 중복되면 반드시 함수로 만들것.
+
+12.아래의 함수를 만드시오. 
+int month = 4;
+
+getSeason(3)// 봄입니다. 출력
+printGuGudan(12)// 겨울 입니다. 출력
+=> 	public static void main(String[] args) {
+		
+		int month = 4;
+		
+		getSeason(3);  // 봄입니다.
+		getSeason(12); // 겨울 입니다.
+
+	}
+	
+	public static void getSeason(int m) {
+		
+		switch(m) {
+		case 3: case 4: case 5:
+			System.out.println("봄 입니다.");
+			break;
+		case 6: case 7: case 8:
+			System.out.println("여름 입니다.");
+			break;
+		case 9: case 10: case 11:
+			System.out.println("가을 입니다.");
+			break;
+		case 12: case 1: case 2:
+			System.out.println("겨울 입니다.");
+			break;
+		}
+	}
