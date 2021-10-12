@@ -248,5 +248,7 @@ printGuGudan(12)// 겨울 입니다. 출력
 		case 12: case 1: case 2:
 			System.out.println("겨울 입니다.");
 			break;
+		default:
+			System.out.println("1년은 열두달 입니다. 입력한 월을 다시 확인해주세요.");
 		}
 	}
