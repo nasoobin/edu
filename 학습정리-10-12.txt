@@ -93,7 +93,7 @@ class Rectangle{
 	}
 	
 }
-=> ![memory](https://user-images.githubusercontent.com/91722808/137111751-1d666ff3-de97-414c-ad47-18f86207cb2d.png)
+=> 
 
 9.클래스와 객체의 차이는?
 - 클래스 : .class
